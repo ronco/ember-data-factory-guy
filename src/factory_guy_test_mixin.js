@@ -7,7 +7,7 @@ var FactoryGuyTestMixin = Em.Mixin.create({
   },
   useFixtureAdapter: function (app) {
     app.ApplicationAdapter = DS.FixtureAdapter;
-    this.getStore().adapterFor('application').simulateRemoteResponse = false;
+    this.getStore().lookupAdapter('application').simulateRemoteResponse = false;
   },
   /**
    @param {String} model type like user for model User

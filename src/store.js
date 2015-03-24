@@ -73,7 +73,7 @@
      */
     setAssociationsForFixtureAdapter: function (modelType, modelName, fixture) {
       var self = this;
-      var adapter = this.adapterFor('application');
+      var adapter = this.lookupAdapter('application');
 
       Ember.get(modelType, 'relationshipsByName').forEach(function (relationship, name) {
         var hasManyRelation, belongsToRecord;

@@ -779,7 +779,7 @@ var MockUpdateRequest = function(url, model, mapFind, options) {
      */
     setAssociationsForFixtureAdapter: function (modelType, modelName, fixture) {
       var self = this;
-      var adapter = this.adapterFor('application');
+      var adapter = this.lookupAdapter('application');
 
       Ember.get(modelType, 'relationshipsByName').forEach(function (relationship, name) {
         var hasManyRelation, belongsToRecord;
@@ -990,7 +990,7 @@ var FactoryGuyTestMixin = Em.Mixin.create({
   },
   useFixtureAdapter: function (app) {
     app.ApplicationAdapter = DS.FixtureAdapter;
-    this.getStore().adapterFor('application').simulateRemoteResponse = false;
+    this.getStore().lookupAdapter('application').simulateRemoteResponse = false;
   },
   /**
    @param {String} model type like user for model User
